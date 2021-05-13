@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHY104</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo&family=Sarabun:wght@300&display=swap" rel="stylesheet">
+    <script>
+        function c2f() {
+            let c = document.getElementById("cel").value;
+            let f = c * 9 / 5 + 32;
+            document.getElementById("fah").value = f.toFixed(2);
+
+        }
+    </script>
+    <style>
+        .tempConversion {
+            width: 500px;
+            height: 400px;
+            border: 5px solid black;
+            border-radius: 20px;
+            background-color: paleturquoise;
+            padding: 15px;
+            text-align: center;
+            font-family: monospace;
+            margin: 20px;
+            
+        }
+        .tempConversion h4 {
+            text-align: center;
+            font-size: 30px;
+            color: rgb(255, 42, 77);
+            text-decoration-line: underline;
+        }
+        .tempConversion input {
+            background-color: rgb(185,216,112);
+            font-size: 22px;
+        }
+        .tempConversion button {
+            background-color: pink;
+            font-size: 20px;
+        }
+        .tempConversion select {
+            background-color: plum;
+        }
+        .tempConversion label {
+            font-size: 30px;
+
+        }
+        .head{
+            background-color: pink;
+            padding: 100px;
+        }
+        .head h1{
+            color: rgb(204, 0, 255);
+            font-family: 'Heebo', sans-serif;
+            font-size: 42px;
+            text-align:center;
+            text-decoration-line: underline;
+            text-shadow: 10px 5px 15px rgb(219, 253, 138);
+        }
+        .head h2 {
+            color: rgb(255, 102, 0);
+            font-family: 'Sarabun', sans-serif;
+            font-size: 36px;
+            text-align:left;
+        }
+        .head p{
+            color: rgb(0, 0, 0);
+            font-size: 24px;
+            font-family: 'Bebas Neue', cursive;
+            text-align:left;
+        }
+
+    </style>
+</head>
+<body bgcolor="#FFFF99">
+    <div class="head">
+        <h1>TEMPERATURE</h1>
+        <h2>องศาเซลเซียส</h2>
+        <p>คำว่า "เซลเซียส (Celsius)" มาจากชื่อของนักดาราศาสตร์ชาวสวีดิช Anders Celsius (1701-1744) โดยในปี 1742 เขาได้คิดค้นหน่วยวัดอุณหภูมิที่รู้จักกันในชื่อ "เซนติเกรด (Centigrade)" ซึ่งเป็นภาษาละติน 
+            หมายถึง 100 องศา ระบบนี้กำหนดให้จุดเดือดของน้ำหรือจุดหลอมเหลวของน้ำแข็งอยู่ที่ 
+            0 องศา ขณะที่จุดเยือกแข็งของน้ำอยู่ที่ 100 องศา</p>
+            <center><img src="http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcTMiWtK2mO8oAiTDQBOvUzP8yv7AXThxOXbJyC0X5a6haVDQ55Q_zphrRiNmM--", width= 200px , height= 300px;></center>
+        <h2>องศาฟาเรนไฮต์ </h2>
+        <p>ในปี 1724 นักฟิสิกส์ชาวเยอรมัน-ดัชต์ Daniel Gabriel Fahrenheit (1686-1736) ได้เสนอหน่วยวัดอุณหภูมิซึ่งเรารู้จักกันในหน่วย "องศาฟาเรนไฮต์" ใช้สัญลักษณ์เป็น ํF 
+           โดยกำหนดให้จุดเยือกแข็งของน้ำอยู่ที่ 32 องศา และจุดเดือดอยู่ที่ 212 องศา ระหว่างจุดเดือดกับจุดเยือกแข็งจึงสามารถแบ่งได้เป็น 180 หน่วยหรือ 180 ช่อง (มาจาก 212-32) ดังนั้น อุณหภูมิที่ต่างกัน 1 องศาฟาเรนไฮต์ จะเท่ากับอุณหภูมิที่ต่างกัน 0.556 องศาเซลเซียส (มาจาก 100/180) และอุณหภูมิที่ต่างกัน 1 องศาเซลเซียสจะเท่ากับอุณหภูมิที่ต่างกัน 1.8 องศาฟาเรนไฮต์
+            </p>
+            <center><img src="https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_1920,f_auto/A-Carolina-Pontes-Daniel-Fahrenheit_zljtwo.jpg", width= 200px , height= 300px;></center>
+        </div> 
+    <center><div class="tempConversion">
+        <h4>Temperature Conversion</h4>
+        <label for="">Celcius(&#8451;)</label> <br>
+        <input type="text" name="" id="cel" size="30">
+        <button onclick="c2f()">&#8451; to &#8457;</button> <br> <br>
+
+        <label for="">Fahrenheit(&#8457;)</label> <br>
+        <input type="text" name="" id="fah" size="30">
+        <button onclick="c2f()">&#8457; to &#8451;</button> <br> <br>
+    </div></center>
+</body>
+</html>
