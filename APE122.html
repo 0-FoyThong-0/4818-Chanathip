@@ -2,119 +2,177 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APE 122</title>
-    <script>
-        function SPEEDRATE() {
-            let D = parseFloat(document.getElementById("D").value);
-            let n = parseFloat(document.getElementById("n").value);
-            let Vc = (3.14159265 * D * n) / 1000;
-            document.getElementById("SPEEDRATE").value = Vc.toFixed(3);
-        }
-    </script>
-    <script>
-        function FEEDRATE() {
-            let fz = parseFloat(document.getElementById("FEED PER TOOTH").value);
-            let Zn = parseFloat(document.getElementById("NUMBER OF TEETH").value);
-            let n1 = parseFloat(document.getElementById("n1").value);
-            let Vf = (fz * Zn *n1);
-            document.getElementById("FEED RATE").value = Vf.toFixed(3);
-        }
-    </script>
+    <title>APE112</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Padauk&display=swap" rel="stylesheet">
     <style>
-        .container{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .Calculator{
-            width: 350px;
-            height: 350px;
-            border: 10px solid rgb(248, 148, 240);
-            border-radius: 20px;
-            background-color:  rgb(105, 189, 245);
-            padding: 15px;
-            margin: 20px;
-            font-family:sans-serif;
-        }
-        .Calculator h1{
-            text-align: center;
-        }
-        .Calculator input{
-            background-color: rgb(248, 248, 248);
-            border-radius:20px;
-            height: 20px;
-        }
-        .Calculator button{
-            background-color: rgb(255, 241, 117);
-            padding: 13px;
-        }
-        h1{
-            font-size: 20px;
-            text-align: center;
+       
+         
+        .head {
+            border: 3px solid rgb(0, 0, 0);
             color: rgb(0, 0, 0);
-        }
-        h2{
-            font-size: 50px;
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: rgb(188, 248, 248);
+            width: auto;
+            height: auto;
             text-align: center;
-            color:rgb(0, 0, 0);
+            border-radius: 10px;
+            font-family: 'Padauk', sans-serif;
+        }
+        
+        .cal1 {
+            
+            width: 400px;
+            height: 500px;
+            border: 5px solid rgb(255, 255, 255);
+            background-color: #ffa6f8;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px;
+            align-items: center;
+            font-family: 'Padauk', sans-serif;
+            
+           }
+          
+           .cal2 {
+            width: 400px;
+            height: 500px;
+            border: 5px solid rgb(255, 255, 255);
+            background-color: rgb(125, 223, 253);
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px;
+            font-family: 'Padauk', sans-serif;
+           }
+        .cal1 h1 {
+               text-align: center;
+               background-color: rgb(133, 231, 255);
+               color: rgb(0, 0, 0);
+               border-radius: 10px;
+               border: 3px solid rgb(0, 0, 0);
+               font-family: 'Padauk', sans-serif;
+           }
+        .cal2 h1{
+               text-align: center;
+               background-color: rgb(245, 140, 255);
+               color: rgb(0, 0, 0);
+               border-radius: 10px;
+               border: 3px solid rgb(0, 0, 0);
+               font-family: 'Padauk', sans-serif;
+            }
+        .cal1 input {
+               width: 150px;
+               background-color: rgb(255, 199, 125) ;
+               border: 2px solid black;
+               padding:8px;
+               margin: 10px;
+               border-radius: 10px;
+               font-family: 'Padauk', sans-serif;
+           }
+        .cal2 input {
+               width: 150px;
+               background-color:rgb(255, 202, 133) ;
+               border: 2px solid black;
+               padding: 8px;
+               margin: 10px;
+               border-radius: 10px;
+               font-family: 'Padauk', sans-serif;
+        }
 
+        .cal1 button{
+         background-color: rgb(255, 255, 255);
+            width: 100px;
+            height:50px ;
+            font-size: x-large;
+            border-radius: 5px;
+            margin: 5px;
+            font-family: 'Padauk', sans-serif;
+         }  
+            
+         .cal2 button{
+            background-color: rgb(255, 255, 255);
+            width: 100px;
+            height:50px ;
+            font-size: x-large;
+            border-radius: 5px;
+            margin: 5px;
+            font-family: 'Padauk', sans-serif;
         }
-        body{
-            background-color: rgb(253, 255, 109);
+       .container {
+            justify-content: center;
+            display:flex;
         }
+     body{
+         background-color: rgb(255, 194, 194);
+     }
+    </style>
 
-        input{
-            margin: 10px;
+    <!-- java speed rate -->
+    <script>
+        function speedrate() {
+            let D = parseFloat(document.getElementById("diameter").value);
+            let n = parseFloat(document.getElementById("ความเร็วรอบ").value);
+            let Vc = (3.14159265 * D * n) / 1000;
+            document.getElementById("speedrate").value = Vc.toFixed(2);
         }
-    </style>    
+    </script>
+
+    <!-- java feed rate  -->
+    <script>
+        function feedrate() {
+            let fz = parseFloat(document.getElementById("feedpertooth").value);
+            let z = parseFloat(document.getElementById("numberoftooth").value);
+            let n2 = parseFloat(document.getElementById("ความเร็วรอบ1").value);
+            let Vf = (fz * z *n2);
+            document.getElementById("feedrate").value = Vf.toFixed(2);
+        }
+    </script>
+
 </head>
+
+
 <body>
-    <div>
-        <h2><r><u>Speed and feedrate</u></r>
-        </h2> 
-      </div>  
-  <div class="container">
-    <!-- SPEED RATE -->
-    <div class="Calculator">
-        <h1><u>SPEED RATE</u></h1>
-        <label for="" style="margin-left: 20px;">Spindle Speed (n)</label>
+   
+    <h1 class="head">SPEED AND FEED RATE</h1>
+    
+    <div class="container">
+
+        <!-- เครื่องคิด cutting speed -->
+    <div class="cal1">
+        <h1>Speed Rate</h1>
+        <label for="" style="margin-left: 15px;">Spindle Speed (n)</label><br>
+        <input type="text" name="" id="ความเร็วรอบ" size="15px"> (rev/min)
         <br>
-        <input type="text" name="" id="n" size=""> (rev/min)
+        <label for="" style="margin-left: 15px;">Cutter Diameter (D)</label><br>
+        <input type="text" name="" id="diameter" size="15px"> (mm)
         <br>
-        <label for="" style="margin-left: 20px;">Cutter Diameter (D) (D)</label>
+        <label for="" style="margin-left: 15px;" class="s1">Speed Rate (Vc)</label><br>
+        <input type="text" name="" id="speedrate" size="15px"> (m/min)
         <br>
-        <input type="text" name="" id="D" size=""> (mm)
-        <br>
-        <label for="" style="margin-left: 20px;">Speed Rate (Vc)</label>
-        <br>
-        <input type="text" name="" id="Speed Rate " size=""> (m/min)
-        <br>
-        <button onclick="SPEEDRATE()">ENTER</button>
+        <button  onclick="speedrate()">Enter</button>
     </div>
-    <!-- FEED RATE -->
-    <div class="Calculator">
-        <h1><u>FEED RATE</u></h1>
-        <label for="" style="margin-left: 20px;">Feed Per Tooth (fz)</label>
+    
+       
+    <!-- เครื่องคิด feed -->
+    <div class="cal2">
+        <h1>Feed Rate</h1>
+        <label for="" style="margin-left: 15px;">Feed Per Tooth (fz)</label><br>
+        <input type="text" name="" id="feedpertooth" size="15px"> (mm/tooth)
         <br>
-        <input type="text" name="" id="Feed Per Tooth" size=""> (mm/tooth)
+        <label for="" style="margin-left: 15px;">Number Of Teeth (z)</label><br>
+        <input type="text" name="" id="numberoftooth" size="15px">
         <br>
-        <label for="" style="margin-left: 20px;">Number Of Teeth (z)</label>
+        <label for="" style="margin-left: 15px">Spindle Speed (n)</label><br>
+        <input type="text" name="" id="ความเร็วรอบ1" size="15px"> (rev/min)
         <br>
-        <input type="text" name="" id="Number Of Teeth" size="">
+        <label for="" style="margin-left: 15px;" class="F">Feed Rate (Vf)</label><br>
+        <input type="text" name="" id="feedrate" size="15px"> (mm/min)
         <br>
-        <label for="" style="margin-left: 20px;">Spindle Speed (n)</label>
-        <br>
-        <input type="text" name="" id="n1" size=""> (rev/min)
-        <br>
-        <label for="" style="margin-left: 20px;">Feed Rate (Vf)</label>
-        <br>
-        <input type="text" name="" id="Feed Rate " size=""> (mm/min)
-        <br>
-        <button class="botton2" onclick="FEEDRATE()">ENTER</button>
+        <button onclick="feedrate()">Enter</button>
     </div>
-  </div>
+    </div>
+
+    
+
 </body>
 </html>
